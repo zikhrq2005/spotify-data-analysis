@@ -19,13 +19,13 @@ This repository contains the full data science pipeline for two projects built o
 
 ```
 ├── README.md
-├── Project_1.ipynb        # Data preparation & visualization (Spotify dataset)
-└── Project_2.ipynb        # Web scraping, integration & hypothesis testing
+├── Project 1.ipynb        # Data preparation & visualization (Spotify dataset)
+└── Project 2.ipynb        # Web scraping, integration & hypothesis testing
 ```
 
 ---
 
-## Project 1 — Spotify Tracks Analysis (`Project_1.ipynb`)
+## Project 1 — Spotify Tracks Analysis (`Project 1.ipynb`)
 
 Follows the full data science pipeline on the Spotify dataset.
 
@@ -47,7 +47,7 @@ Follows the full data science pipeline on the Spotify dataset.
 | Q5 | How does track duration relate to popularity — are shorter or longer songs more successful? |
 | Q6 | How does the relationship between acousticness and energy differ across genres? |
 | Q7 | Which genres are most and least popular overall? |
-| Q8–Q12 | Additional analysis (see `Full_Report.docx` for full answers) |
+| Q8–Q12 | Additional analysis (see `Full Report.docx` for full answers) |
 
 ### Libraries Used
 ```python
@@ -56,7 +56,7 @@ pandas, numpy, matplotlib, seaborn
 
 ---
 
-## Project 2 — Web Scraping & Data Integration (`Project_2.ipynb`)
+## Project 2 — Web Scraping & Data Integration (`Project 2.ipynb`)
 
 Extends Project 1 by enriching the Spotify dataset with data scraped from Wikipedia.
 
@@ -93,3 +93,24 @@ pandas, numpy, matplotlib, seaborn, requests, beautifulsoup4
 - **Tempo** — Mid-tempo genres (100–130 BPM) such as hip-hop and reggaeton are more popular and danceable than very fast genres.
 - **Track Duration** — Songs between 2–4 minutes tend to achieve the highest popularity scores.
 - **Acousticness vs. Energy** — Strong negative correlation (–0.845); acoustic and high-energy production rarely coexist.
+
+## Running the analysis
+
+1. Clone this repository and create a Python virtual environment.
+2. Install Jupyter and the analysis libraries:
+
+   ```sh
+   python -m pip install jupyter pandas numpy matplotlib seaborn scipy requests beautifulsoup4 lxml
+   ```
+
+3. Download the Spotify Tracks Dataset from the source linked above. Check the CSV loading paths in `Project 1.ipynb` against your local download.
+4. Open Jupyter and run `Project 1.ipynb` in order. Confirm that its cleaned data is exported as `cleaneddataset.csv` at the path expected by `Project 2.ipynb`.
+5. Run `Project 2.ipynb`. Its Wikipedia scraping steps require internet access.
+
+These are setup guidelines, not a verified dependency lockfile. Local paths or changes to Wikipedia tables may require adjustments.
+
+## Interpretation and limitations
+
+The findings describe associations in this dataset; they do not establish that audio features cause popularity. The Wikipedia integration covers a selected set of commercially successful artists, and artist-name matching may miss or ambiguously match records.
+
+This is group coursework. The notebooks and report describe the combined work; repository ownership should not be interpreted as sole authorship.
