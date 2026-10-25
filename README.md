@@ -1,7 +1,8 @@
-# Introduction to Data Science — Projects 1 & 2
-**Group 2**
+# Spotify Data Analysis
 
-This repository contains the full data science pipeline for two projects built on the Spotify Tracks Dataset, including data preparation, visualization, web scraping, data integration, and hypothesis testing.
+Two university data science projects exploring audio features, track popularity, and artist information.
+
+This repository contains coursework covering a data science workflow for two projects built on the Spotify Tracks Dataset, including data preparation, visualization, web scraping, data integration, and hypothesis testing.
 
 ---
 
@@ -20,7 +21,8 @@ This repository contains the full data science pipeline for two projects built o
 ```
 ├── README.md
 ├── Project 1.ipynb        # Data preparation & visualization (Spotify dataset)
-└── Project 2.ipynb        # Web scraping, integration & hypothesis testing
+├── Project 2.ipynb        # Web scraping, integration & hypothesis testing
+└── Full Report.docx       # Coursework report
 ```
 
 ---
@@ -80,12 +82,14 @@ The Wikipedia dataset adds country of origin, genre, period active, and claimed 
 
 ### Libraries Used
 ```python
-pandas, numpy, matplotlib, seaborn, requests, beautifulsoup4
+pandas, numpy, matplotlib, seaborn, scipy, requests, beautifulsoup4
 ```
 
 ---
 
-## Key Findings
+## Findings reported in the coursework
+
+These summarize the original analysis. They have not been independently reproduced during the recent documentation update.
 
 - **Energy & Danceability vs. Popularity** — Near-zero correlation; popular songs are spread across all energy/danceability levels.
 - **Loudness** — Not a strong predictor of popularity for either explicit or non-explicit tracks.
@@ -96,12 +100,22 @@ pandas, numpy, matplotlib, seaborn, requests, beautifulsoup4
 
 ## Running the analysis
 
-1. Clone this repository and create a Python virtual environment.
+1. Clone the repository, enter its directory, and create an isolated environment:
+
+   ```sh
+   git clone https://github.com/zikhrq2005/spotify-data-analysis.git
+   cd spotify-data-analysis
+   python -m venv .venv
+   ```
+
+   Activate it with `.venv\\Scripts\\Activate.ps1` in Windows PowerShell, or `source .venv/bin/activate` on macOS/Linux.
 2. Install Jupyter and the analysis libraries:
 
    ```sh
    python -m pip install jupyter pandas numpy matplotlib seaborn scipy requests beautifulsoup4 lxml
    ```
+
+   Start the notebook interface with `python -m jupyter notebook`.
 
 3. Download the Spotify Tracks Dataset from the source linked above. Check the CSV loading paths in `Project 1.ipynb` against your local download.
 4. Open Jupyter and run `Project 1.ipynb` in order. Confirm that its cleaned data is exported as `cleaneddataset.csv` at the path expected by `Project 2.ipynb`.
@@ -113,4 +127,21 @@ These are setup guidelines, not a verified dependency lockfile. Local paths or c
 
 The findings describe associations in this dataset; they do not establish that audio features cause popularity. The Wikipedia integration covers a selected set of commercially successful artists, and artist-name matching may miss or ambiguously match records.
 
-This is group coursework. The notebooks and report describe the combined work; repository ownership should not be interpreted as sole authorship.
+## My work
+
+I developed the original notebooks and analysis in this repository. The projects were submitted as group coursework. Recent README and setup guidance updates were AI-assisted; the original notebooks have not been changed as part of this documentation update.
+
+## Reproducibility status
+
+- The repository contains the two notebooks and the coursework report; the source dataset and `cleaneddataset.csv` are not included.
+- Installation commands are guidance, not a tested or version-pinned environment.
+- Notebook execution, local file paths, cleaned-data export, and current Wikipedia scraping compatibility still need end-to-end verification.
+- Saved coursework findings should be treated as reported results until reproduced.
+
+## Next improvements
+
+- Verify both notebooks in a fresh environment and record working dependency versions.
+- Replace machine-specific paths with configurable relative paths.
+- Confirm the cleaned-data export and document its schema.
+- Export representative charts with the code and data needed to regenerate them.
+- Check artist matching and report unmatched or ambiguous records.
